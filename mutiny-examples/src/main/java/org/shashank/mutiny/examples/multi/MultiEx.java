@@ -99,5 +99,12 @@ public class MultiEx {
             return next;
         });
         multiGenerators.subscribe().with(System.out::print);
+        /*
+            The initial state is given through a supplier (here () → 1). The generator function accepts 2 arguments:
+            1. the current state,
+            2. an emitter that can emit a new item, emit a failure, or emit a completion.
+
+            The generator function return value is the next current state. Running the previous example gives the following numbers suite: {2, 4, 7, 11, 17, 26, 40, 61}.
+         */
     }
 }
