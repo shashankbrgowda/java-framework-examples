@@ -1,4 +1,4 @@
-package org.shashank.mutiny.examples;
+package org.shashank.mutiny.examples.events;
 
 import io.smallrye.mutiny.Multi;
 import io.smallrye.mutiny.Uni;
@@ -32,7 +32,7 @@ public class InvokeAndCall {
         Multi.createFrom().items("Shashank")
                 .onItem().invoke(i -> System.out.println(i))
                 .onFailure().invoke(f -> System.out.println())
-                .onCompletion().invoke(() -> System.out.println("Compelted"))
+                .onCompletion().invoke(() -> System.out.println("Completed"))
                 .onCancellation().invoke(() -> System.out.println("Cancelled"))
                 .onSubscription().invoke(() -> System.out.println("Subscription"))
                 .subscribe().with(System.out::println);
